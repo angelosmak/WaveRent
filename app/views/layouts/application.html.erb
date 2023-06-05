@@ -12,9 +12,15 @@
 
   <body>
     <div class="vh-100">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= render 'shared/navbar' %>
       <%= yield %>
-    </div>
+      <% if user_signed_in? %>
+       <h2>You just logged in as :<%= current_user.email %></h2>
+       <%= link_to "Sign out", destroy_user_session_path,data: {turbo_method: :delete}, class:"btn btn-primary" %>
+      <% end %>
+     </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
