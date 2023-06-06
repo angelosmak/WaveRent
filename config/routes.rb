@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#index"
+  root to: "gears#index"
   resources :bookings, except: :new
   resources :gears do
     resources :bookings, only: [:new]
