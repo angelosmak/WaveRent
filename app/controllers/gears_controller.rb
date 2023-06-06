@@ -23,12 +23,11 @@ class GearsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def update
-    @gear.update(gear_params)
-    redirect_to gear_path(@gear)
+    @gear.update(gears_params)
+    redirect_to gears_path(@gear)
   end
 
   def edit
