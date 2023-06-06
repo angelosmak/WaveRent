@@ -16,7 +16,7 @@ class GearsController < ApplicationController
   def create
     @gear = Gear.new(gears_params)
     @gear.save
-    redirect_to gear_path(@gear)
+    redirect_to gears_path(@gear)
   end
 
   def update
