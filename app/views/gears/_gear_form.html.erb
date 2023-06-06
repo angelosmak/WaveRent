@@ -1,6 +1,7 @@
 <%= simple_form_for @gear do |f| %>
-  <%= f.input :brand %>
-  <%= f.input :model %>
-  <%= f.input :size %>
-  <%= f.input :rate_per_day %>
-  <%= f.button :submit %>
+  <%= f.input :brand, required: true, placeholder: "Enter item's brand", error: 'Username is mandatory, please specify one' %>
+  <%= f.input :model, required: true, placeholder: "Enter item's model"  %>
+  <%= f.input :size, required: false, placeholder: "(optional) Enter item's size"  %>
+  <%= f.input :rate_per_day, required: true %>
+  <%= f.button :submit, "Create Gear Listing!" %>
+<% end %>
