@@ -1,6 +1,6 @@
 class GearsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_gear, only: [:show, :edit, :update, :destroy]
+  before_action :set_gear, only: [:edit, :update, :destroy]
 
   def new
     @gear = Gear.new
