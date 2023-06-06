@@ -36,7 +36,7 @@ class GearsController < ApplicationController
     params.require(:gear).permit(:model, :brand, :size, :rate_per_day)
   end
 
-  def set_list
+  def set_gear
     @gear = Gear.find(params[:gear_id])
   end
 end
