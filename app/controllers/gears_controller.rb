@@ -6,7 +6,7 @@ class GearsController < ApplicationController
   end
 
   def index
-    @gears = Gears.all
+    @gears = Gear.all
   end
 
   def show
