@@ -2,10 +2,6 @@ class GearsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_gear, only: [:edit, :update, :destroy]
 
-  def new
-    @gear = Gear.new
-  end
-
   def index
     @gears = Gear.all
   end
@@ -14,10 +10,19 @@ class GearsController < ApplicationController
     @gear = Gear.find(params[:id])
   end
 
+  def new
+    @gear = Gear.new
+  end
+
   def create
     @gear = Gear.new(gears_params)
+    @gear.user_id = current_user.id
     @gear.save
-    redirect_to gear_path(@gear)
+    if @gear.save
+      redirect_to gear_path(@gear), notice: "Gear was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -33,8 +38,11 @@ class GearsController < ApplicationController
     redirect_to gears_path
   end
 
+
+  private
+
   def gears_params
-    params.require(:gear).permit(:model, :brand, :size, :rate_per_day)
+    params.require(:gear).permit(:model, :brand, :size, :rate_per_day )
   end
 
   def set_gear
