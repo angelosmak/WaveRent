@@ -1,4 +1,5 @@
 class GearsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_gear, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -16,12 +17,12 @@ class GearsController < ApplicationController
   def create
     @gear = Gear.new(gears_params)
     @gear.save
-    redirect_to gears_path(@gear)
+    redirect_to gear_path(@gear)
   end
 
   def update
-    @gear.update(gear_params)
-    redirect_to gear_path(@gear)
+    @gear.update(gears_params)
+    redirect_to gears_path(@gear)
   end
 
   def edit
