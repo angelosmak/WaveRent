@@ -1,0 +1,55 @@
+
+
+<div class="container mb-5">
+  <div class="d-flex justify-content-between my-4">
+    <span class="mb-2 d-block"><small><em class="text-muted"><%= "You haven't rented anything yet!" if @user.bookings.empty? %></em></small></span>
+    <div>
+    </div>
+  </div>
+  <div class="row my-2">
+  <h2>My Products:</h2>
+    <% @user.gears.each do |gear| %>
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="bg-white rounded shadow h-100">
+          <%# <%= image_tag gea.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
+          <div class="p-3 rounded-bottom d-flex flex-column">
+            <strong><%= gear.model %> <span class="text-muted font-weight-normal">• <%= gear.brand %> <i class="fas fa-star star-yellow"></i></span></strong>
+            <small class="text-muted"><%= gear.size %></small>
+            <div class="d-flex align-items-end justify-content-between pt-4">
+              <div>
+                <i class="fa-solid fa-euro-sign"></i><small class="flex-grow-1">  <%= gear.rate_per_day %></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <hr class="my-5">
+    <div class="row my-2">
+      <h2>My Bookings:</h2>
+    <% @user.bookings.each do |booking| %>
+      <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="bg-white rounded shadow h-100">
+          <%# <%= image_tag gea.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
+          <div class="p-3 rounded-bottom d-flex flex-column">
+            <strong><%= booking.rental_start_date %> <span class="text-muted font-weight-normal">• <%= booking.rental_end_date %> <i class="fas fa-star star-yellow"></i></span></strong>
+            <div class="d-flex align-items-end justify-content-between pt-4">
+              <div>
+                <i class="fas fa-quote-left me-2"></i><small class="flex-grow-1"><%= booking.total_cost %></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+    <div class="col-12 col-sm-6">
+      <div class="bg-white rounded p-3">
+      <%= link_to "Add a new product" ,new_gear_path%>
+      <%= link_to "Rent a new " ,new_gear_path%>
+
+      </div>
+    </div>
+  </div>
+</div>
