@@ -1,0 +1,16 @@
+
+<div class="container d-flex align-items-center justify-content-between">
+  <div class="row row-4 mb-3">
+    <% @gears.each do |gear| %>
+      <div class='col-3 mx-3 mb-3 card'>
+        <div class="card" style="width: 18rem;">
+        <img src="<%= asset_path('1.png') %>" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h2><%= link_to gear.model, gear_path(gear) %></h2>
+        </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
+</div>

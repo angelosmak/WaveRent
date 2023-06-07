@@ -4,25 +4,13 @@
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap"; // from the node_modules
+// @import "font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-#page-container {
-  position: relative;
-  min-height: 100vh;
-}
-
-
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;            /* Footer height */
-}
-
-/* IE 6 */
+@import "font awesome/scss/fontawesome.scss";
+@import "font awesome/scss/brands.scss";
+@import "font awesome/scss/solid.scss";
