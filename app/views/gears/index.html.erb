@@ -3,7 +3,7 @@
 <h1>Get your Peers Gear here!</h1>
 
 <% @gears.each do |gear| %>
-  <div class='d-flex align-items-center justify-content-between mb-3'>
+  <div>
     <h2><%= link_to gear.model, gear_path(gear) %></h2>
   </div>
 <% end %>
