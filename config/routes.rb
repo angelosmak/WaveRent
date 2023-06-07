@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :bookings, except: :new
   resources :gears do
-    resources :bookings, only: [:new]
+    resources :bookings, only: [:new, :create]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   before_action :set_gear, only: [:new, :create]
-  before_action :set_booking, only: :show
 
 
   def new
@@ -12,8 +11,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.gear = @gear
+    @booking.user = current_user
     @booking.save
-    redirect_to gear_path(@gear)
+    redirect_to user_path(@booking.user)
   end
 
   private
@@ -24,5 +24,9 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:rental_start_date, :rental_end_date)
   end
 end
