@@ -1,7 +1,10 @@
 <%= simple_form_for @gear do |f| %>
   <%= f.input :brand, required: true, placeholder: "Enter item's brand"%>
+  <%= f.input :title, required: true, placeholder: "Enter item's brand"%>
+  <%= f.input :description, required: true, placeholder: "Enter item's brand"%>
+  <%= f.input :category, collection: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"]%>
   <%= f.input :model, required: true, placeholder: "Enter item's model"  %>
   <%= f.input :size, required: false, placeholder: "(optional) Enter item's size"  %>
   <%= f.input :rate_per_day, required: true %>
-  <%= f.button :submit, "Create Gear Listing!" %>
+  <%= f.button :submit, "Create Gear Listing!", class:"btn btn-outline-success mb-3 shadow p-3  bg-body-tertiary rounded " %>
 <% end %>
