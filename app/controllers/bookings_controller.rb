@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_gear, only: [:new, :create]
+  before_action :set_booking, only: :show
+
 
   def new
     @booking = Booking.new
@@ -18,5 +20,9 @@ class BookingsController < ApplicationController
 
   def set_gear
     @gear = Gear.find(params[:gear_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
