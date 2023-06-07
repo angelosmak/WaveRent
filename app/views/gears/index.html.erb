@@ -1,11 +1,16 @@
-<h1>Gears#index</h1>
-<p>Find me in app/views/gears/index.html.erb</p>
-<h1>Get your Peers Gear here!</h1>
 
-<% @gears.each do |gear| %>
-  <div>
-    <h2><%= link_to gear.model, gear_path(gear) %></h2>
+<div class="container d-flex align-items-center justify-content-between ">
+  <div class="row row-4 mb-3">
+    <% @gears.each do |gear| %>
+      <div class='col-3 mx-3 mb-3 card'>
+        <div class="card" style="width: 18rem;">
+        <img src="<%= asset_path('1.png') %>" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h2><%= link_to gear.model, gear_path(gear) %></h2>
+        </div>
+      </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
-<%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
+  <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
+</div>
