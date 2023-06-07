@@ -1,13 +1,16 @@
 <br>
 <h1></h1>
 
-
-<div class='d-flex flex-column align-items-center justify-content-center mb-3'>
-  <h2><%= @gear.title %></h2>
-  <p>Brand:<%= @gear.brand %></p>
-  <p>Model:<%= @gear.model %></p>
-  <p>Size:<%= @gear.size %></p>
-  <p>Only<%= @gear.rate_per_day %> $</p>
-  <%= link_to "Book this Item", new_gear_booking_path(@gear), class: "btn btn-outline-success mb-3 shadow p-3 bg-body-tertiary rounded" %>
+<div >
+  <div class='container card display: flex; my-4 shadow p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center mb-3'>
+    <div class= "col-md-5 display: flex">
+      <img src="<%= "/assets/1-6c15ed9a13d1dd916afd7c9cc4f01847dc11eaab184c465f1e88ffee336f85bb.png" %>" alt="Image description" class="img-fluid">
+      <h2><%= @gear.title %></h2>
+      <p>Brand:<%= @gear.brand %></p>
+      <p>Model:<%= @gear.model %></p>
+      <p>Size:<%= @gear.size %></p>
+      <p>Only <%= @gear.rate_per_day %> $</p>
+      <%= link_to "Book this Item", new_gear_booking_path(@gear), class: "btn btn-outline-success mb-3 shadow p-3 bg-body-tertiary rounded" %>
+    </div>
+  </div>
 </div>
-
