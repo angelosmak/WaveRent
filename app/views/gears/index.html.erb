@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-=======
-
 <div class="container-index bg-colour">
   <p class="display-1">Welcome to WaveRent!</p>
    <h3>A place for you to hire surf gear</h3>
@@ -29,9 +26,6 @@
       </div>
     <% end %>
   </div>
-  <div id="pagination">
-    <%= render 'shared/pagination', pagy:@pagy %>
-  </div>
   <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
 </div>
 
@@ -44,4 +38,3 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
->>>>>>> master

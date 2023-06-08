@@ -4,6 +4,7 @@ class GearsController < ApplicationController
 
   def index
 #     @pagy, @gears = pagy(Gear.all, items: 5)
+    @gears = Gear.all
     @markers = @gears.geocoded.map do |gear|
         {
           lat: gear.latitude,
