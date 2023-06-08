@@ -24,6 +24,11 @@ class GearsController < ApplicationController
 
   def show
     @gear = Gear.find(params[:id])
+    @markers = @gear.geocoded.map
+      {
+        lat: gear.latitude,
+        lng: gear.longitude
+      }
   end
 
   def new
