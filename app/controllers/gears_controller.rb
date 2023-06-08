@@ -4,7 +4,7 @@ class GearsController < ApplicationController
 
   def index
     # @gears = Gear.all
-    @pagy, @gears = pagy(Gear.all)
+    @pagy, @gears = pagy(Gear.all, items: 5)
   end
 
   def show
