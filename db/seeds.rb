@@ -70,7 +70,7 @@ end
     size: "XL",
     user_id: User.all.sample.id,
     rate_per_day: Faker::Number.decimal(l_digits: 2),
-    category: "Surfboard"
+    category: "Surfboard",
     address: "Paris"
   )
   Board2.save!
@@ -110,6 +110,6 @@ end
     user_id: User.all.sample.id,
     rate_per_day: Faker::Number.decimal(l_digits: 2),
     category: "Wetsuit",
-    address: "Berlin"
+    address: "Madeira"
   )
   Wetsuit2.save!
