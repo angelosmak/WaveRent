@@ -1,5 +1,5 @@
 
-<div class="container-index bg-colour">
+<div class="container-index bg-colour", id="pagination-redirect">
   <p class="display-1">Welcome to WaveRent!</p>
    <h3>A place for you to hire surf gear</h3>
 </div>
@@ -27,7 +27,7 @@
     <% end %>
   </div>
   <div id="pagination">
-    <%= render 'shared/pagination', pagy:@pagy %>
+    <%# <%= render 'shared/pagination', pagy:@pagy %> 
   </div>
   <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
 </div>
