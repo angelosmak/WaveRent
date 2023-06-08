@@ -1,3 +1,4 @@
+
 <nav class="card bg-white navbar-expand-lg bg-body-tertiary fixed-top">
   <div class="container-fluid mb-2 mt-2">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -37,6 +38,6 @@
         <% if current_user %>
         <%= link_to "Sign out", destroy_user_session_path,data: {turbo_method: :delete}, class:"ms-5 btn btn-primary" %>
         <% end %>
+      </ul>
     </div>
   </div>
-</nav>

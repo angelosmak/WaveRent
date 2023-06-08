@@ -1,0 +1,110 @@
+.cards-container {
+  // position: absolute;
+  align-items: center;
+  max-width: 1935px;
+  margin: 0px auto;
+  width: 100%;
+}
+
+.card-gear {
+  overflow: hidden;
+  min-width: 64%;
+  background: rgba(254, 254, 254, 0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 16px;
+}
+
+.card-gear > img {
+  padding: 16px;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  // border-bottom: 1px solid black;
+  // box-shadow: 0px 15px 10px -15px #111
+}
+
+.card-gear h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-gear p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-gear .card-gear-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-gear-infos .card-gear-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards-container {
+    max-width: 1000px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1300px) {
+  .cards-container {
+    max-width: 1300px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1600px) {
+  .cards-container {
+    max-width: 1600px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
