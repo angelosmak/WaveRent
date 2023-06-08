@@ -57,6 +57,8 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 gem "sassc-rails"
 
+gem "cloudinary"
+
 # Adding bootstrap gem
 gem 'bootstrap', '~> 5.0.0'
 
