@@ -3,7 +3,20 @@ class GearsController < ApplicationController
   before_action :set_gear, only: [:edit, :update, :destroy]
 
   def index
-    @gears = Gear.all
+#     @pagy, @gears = pagy(Gear.all, items: 5)
+    @markers = @gears.geocoded.map do |gear|
+        {
+          lat: gear.latitude,
+          lng: gear.longitude
+        }
+      end
+    if params[:query].present?
+      sql_subquery = "title ILIKE :query OR description ILIKE :query OR brand ILIKE :query OR model ILIKE :query OR size ILIKE :query OR category ILIKE :query"
+      @gears = Gear.where(sql_subquery, query: "%#{params[:query]}%")
+    else
+      @gears = Gear.all
+    end
+
   end
 
   def show
