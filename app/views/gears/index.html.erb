@@ -1,9 +1,15 @@
+<div class="container bg-colour">
+  <p class="display-1">Welcome to WaveRent!</p>
+</div>
 
-<div class="container-new">
+
+<div class="cards-container bg-colour">
   <div class="cards">
     <% @gears.each do |gear| %>
       <div class="card-gear">
-        <img src="" />
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <%# <%= image_tag Faker::LoremFlickr.image%>
+          <%# <img src="<%=Faker::LoremFlickr.image%>
         <div class="card-gear-infos">
           <div>
             <h2><%= link_to gear.title, gear_path(gear) %></h2>
@@ -15,5 +21,6 @@
       </div>
     <% end %>
   </div>
+  <%= render 'shared/pagination', pagy:@pagy %>
   <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
 </div>

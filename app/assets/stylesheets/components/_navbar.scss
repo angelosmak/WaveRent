@@ -1,21 +1,19 @@
 .navbar-lewagon {
-  position: fixed;
   display: flex;
-  top: 0;
   width: 100vw;
   justify-content: space-between;
   background: white;
 }
 
-h1 {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-}
+// h1 {
+//   font-size: 24px;
+//   font-weight: 600;
+//   margin: 0;
+//   padding: 0;
+// }
 
 .navbar-login {
-  align-items: right;
+  // align-items: right;
   justify-content: space-between;
   padding: 0px 24px;
   height: 40px;

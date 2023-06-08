@@ -5,3 +5,19 @@
 @import "navbar";
 @import "footer";
 @import "card_gear";
+// .container-fluid {
+//   max-width: 90vw;
+//   margin: 0px;
+//   // padding: 0 24px;
+// }
+
+.bg-colour {
+  background-color: $blue;
+}
+
+.display-1 {
+  color: $light-gray;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  align-items: center;
+}

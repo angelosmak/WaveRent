@@ -3,7 +3,8 @@ class GearsController < ApplicationController
   before_action :set_gear, only: [:edit, :update, :destroy]
 
   def index
-    @gears = Gear.all
+    # @gears = Gear.all
+    @pagy, @gears = pagy(Gear.all)
   end
 
   def show
