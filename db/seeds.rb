@@ -10,8 +10,6 @@ User.destroy_all
 puts "Creating users..."
 puts "Gear..."
 
-<<<<<<< HEAD
-
 
 
 =======
@@ -118,4 +116,3 @@ end
     address: "Berlin"
   )
   Wetsuit2.save!
-
