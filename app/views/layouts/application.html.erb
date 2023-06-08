@@ -24,22 +24,26 @@
     <footer id="footer"></footer>
   </div>
 </body>
-
-    <div  id="page-container">
-      <div id="content-wrap">
-        <%= render 'shared/flashes' %>
-        <%= render 'shared/navbar' %>
-        <div class="container">
-          <% if user_signed_in? %>
-          <div class="info d-flex justify-content-end">
-              <h4 ><%= current_user.email %></h4>
-            </div>
-            </div>
+  <div  id="page-container">
+    <div id="content-wrap">
+      <%= render 'shared/flashes' %>
+      <%= render 'shared/navbar' %>
+      <div class="container">
+        <% if user_signed_in? %>
+        <div class="info d-flex justify-content-end">
+          <% if current_user.photo.present? %>
+            <%= cl_image_tag current_user.photo.key, height: 100, width: 100, crop: :fill ,style: "border-radius: 50%;"%>
+          <% else %>
+            <%= cl_image_tag "twh96ztaabtvaahrq8t1", height: 100, width: 100, crop: :fill ,style: "border-radius: 50%;"%>
           <% end %>
-          <%= yield %>
+          <h4 ><%= current_user.email %></h4>
         </div>
       </div>
+      <% end %>
+      <%= yield %>
+      </div>
     </div>
+  </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
