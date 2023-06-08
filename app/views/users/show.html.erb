@@ -33,10 +33,10 @@
         <div class="bg-white rounded shadow h-100">
           <%# <%= image_tag gea.poster_url, alt: movie.title, class: "movie-img rounded-top" %>
           <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= booking.rental_start_date %> <span class="text-muted font-weight-normal">• <%= booking.rental_end_date %> <i class="fas fa-star star-yellow"></i></span></strong>
+            <strong><%= booking.gear.title %> <span class="text-muted font-weight-normal">• <%= booking.gear.category %> <i class="fas fa-star star-yellow"></i></span></strong>
             <div class="d-flex align-items-end justify-content-between pt-4">
               <div>
-                <i class="fas fa-quote-left me-2"></i><small class="flex-grow-1"><%= booking.total_cost %></small>
+                <i class="fa-solid fa-euro-sign"></i><small class="flex-grow-1"> 20</small>
               </div>
             </div>
           </div>
@@ -46,9 +46,6 @@
   </div>
     <div class="col-12 col-sm-6">
       <div class="bg-white rounded p-3">
-      <%= link_to "Add a new product" ,new_gear_path%>
-      <%= link_to "Rent a new " ,new_gear_path%>
-
       </div>
     </div>
   </div>

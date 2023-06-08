@@ -1,4 +1,4 @@
-<%= simple_form_for @booking do |f| %>
+<%= simple_form_for [@gear, @booking] do |f| %>
   <%= f.input :rental_start_date %>
   <%= f.input :rental_end_date %>
   <%= f.button :submit %>
