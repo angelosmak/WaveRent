@@ -1,0 +1,55 @@
+INDEX
+
+<div class="container">
+  <%= render 'shared/carousel' %>
+</div>
+<div class="container d-flex align-items-center justify-content-between ">
+  <div class="row row-4 my-4 ">
+    <% @gears.each do |gear| %>
+      <div class='col-3 mx-3 mb-3 p-3 '>
+        <% gear.photos.each do |photo| %>
+        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+          <%= cl_image_tag photo.key %>
+        <% end %>
+        <div class="card-body">
+        <h2><%= link_to gear.model, gear_path(gear) %></h2>
+        </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+FOOTER
+
+<footer class="card text-center text-lg-start bg-white text-muted footer-small">
+  <section>
+    <div class="container text-center text-md-start mt-1 mb-1">
+      <div class="row">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto">
+          <a href="/" class="btn btn-link text-capitalize mb-0" style="text-decoration: none; color: black;">
+            <i class="fas fa-water me-1 text-secondary"></i>WaveRent
+          </a>
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+          <a href="#" class="btn btn-link text-capitalize fw-light mb-0" style="text-decoration: none; color: black;">
+            About Us
+          </a>
+        </div>
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
+          <a href="#" class="btn btn-link text-capitalize fw-light mb-0" style="text-decoration: none; color: black;">
+            Terms
+          </a>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto">
+          <a href="#" class="btn btn-link text-capitalize fw-light mb-0" style="text-decoration: none; color: black;">
+          Contact
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+
+
+NAVBAR
