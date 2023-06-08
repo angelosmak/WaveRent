@@ -2,7 +2,10 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "faker"
+
 ruby "3.1.2"
+
+gem 'pagy', '~> 6.0' # omit patch digit
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
@@ -18,6 +21,8 @@ gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
+
+gem "pg_search"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -59,7 +64,7 @@ gem 'bootstrap', '~> 5.0.0'
 # gem "image_processing", "~> 1.2"
 
 gem "autoprefixer-rails"
-gem "font-awesome-sass", "~> 6.1"
+gem "font-awesome-sass", "~> 6.4.0"
 gem "simple_form", github: "heartcombo/simple_form"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

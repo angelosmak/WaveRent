@@ -1,0 +1,11 @@
+<div class="card-gear">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-gear-infos">
+    <div>
+      <h2><%= link_to gear.title, gear_path(gear) %></h2>
+      <p><%= gear.title%></p>
+    </div>
+    <h2 class="card-gear-pricing">£909.99</h2>
+    <img src= <%= Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports'])%> class="card-trip-user avatar-bordered" />
+  </div>
+</div>

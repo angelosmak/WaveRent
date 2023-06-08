@@ -1,19 +1,36 @@
-<div class="container">
-  <%= render 'shared/carousel' %>
+
+<div class="container-index bg-colour">
+  <p class="display-1">Welcome to WaveRent!</p>
+   <h3>A place for you to hire surf gear</h3>
 </div>
-<div class="container d-flex align-items-center justify-content-between ">
-  <div class="row row-4 my-4 ">
+
+<div class="container bg-colour">
+  <h4>Gear close to you</h4>
+</div>
+
+<div class="cards-container bg-colour">
+  <div class="cards">
     <% @gears.each do |gear| %>
-      <div class='col-3 mx-3 mb-3 p-3 '>
-        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
-        <img src="<%= asset_path('1.png') %>" class="img-top" alt="...">
-        <div class="card-body">
-        <h2><%= link_to gear.model, gear_path(gear) %></h2>
+      <div class="card-gear">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <%# <%= image_tag Faker::LoremFlickr.image%>
+          <%# <img src="<%=Faker::LoremFlickr.image%>
+        <div class="card-gear-infos">
+          <div>
+            <h2><%= link_to gear.title, gear_path(gear) %></h2>
+            <p><%= gear.description%></p>
+          </div>
+          <h2 class="card-gear-pricing">£99.99</h2>
+          <img src="<%=Faker::Avatar.image%>" class="card-trip-user avatar-bordered" />
+
         </div>
-      </div>
       </div>
     <% end %>
   </div>
+  <div id="pagination">
+    <%= render 'shared/pagination', pagy:@pagy %>
+  </div>
+  <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
 </div>
 
 
