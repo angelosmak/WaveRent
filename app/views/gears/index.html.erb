@@ -32,3 +32,13 @@
   </div>
   <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
 </div>
+
+
+<% #below is the map html, @frontend: feel free to move this where fit,it is just slammed there all ugly for now %>
+
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
