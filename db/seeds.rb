@@ -27,6 +27,7 @@ end
     size: "S",
     user_id: User.all.sample.id,
     rate_per_day: Faker::Number.decimal(l_digits: 2),
+    address: "Berlin",
     category: "Surfboard",
   )
   Board1.save!
@@ -40,6 +41,7 @@ end
     user_id: User.all.sample.id,
     rate_per_day: Faker::Number.decimal(l_digits: 2),
     category: "Surfboard"
+    address: "Paris"
   )
   Board2.save!
 
@@ -52,6 +54,7 @@ end
     user_id: User.all.sample.id,
     rate_per_day: Faker::Number.decimal(l_digits: 1),
     category: "Surfboard",
+    address: "London"
   )
   Board3.save!
 
@@ -64,6 +67,7 @@ end
     user_id: User.all.sample.id,
     rate_per_day: Faker::Number.decimal(l_digits: 2),
     category: "Wetsuit",
+    address: "Amsterdam"
   )
   Wetsuit1.save!
 
@@ -76,5 +80,6 @@ end
     user_id: User.all.sample.id,
     rate_per_day: Faker::Number.decimal(l_digits: 2),
     category: "Wetsuit",
+    address: "Berlin"
   )
   Wetsuit2.save!
