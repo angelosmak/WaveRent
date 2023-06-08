@@ -12,9 +12,14 @@
   <div class="cards">
     <% @gears.each do |gear| %>
       <div class="card-gear">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <%# <%= image_tag Faker::LoremFlickr.image%>
-          <%# <img src="<%=Faker::LoremFlickr.image%>
+          <% gear.photos.each do |photo| %>
+        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+          <%= cl_image_tag photo.key %>
+        <% end %>
+        <div class="card-body">
+        <h2><%= link_to gear.model, gear_path(gear) %></h2>
+        </div>
+      </div>
         <div class="card-gear-infos">
           <div>
             <h2><%= link_to gear.title, gear_path(gear) %></h2>
