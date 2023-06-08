@@ -13,9 +13,11 @@ class GearsController < ApplicationController
       end
     if params[:query].present?
       sql_subquery = "title ILIKE :query OR description ILIKE :query OR brand ILIKE :query OR model ILIKE :query OR size ILIKE :query OR category ILIKE :query"
+      # @pagy, @gears = pagy(Gear.where(sql_subquery, query: "%#{params[:query]}%"))
       @gears = Gear.where(sql_subquery, query: "%#{params[:query]}%")
     else
       @gears = Gear.all
+      # @pagy, @gears = pagy(Gear.all, items: 5)
     end
 
   end
