@@ -10,9 +10,6 @@ User.destroy_all
 puts "Creating users..."
 puts "Gear..."
 
-
-
-=======
 21.times do
   user = User.new(
     first_name: Faker::Name.first_name,
