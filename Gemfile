@@ -10,6 +10,10 @@ gem 'pagy', '~> 6.0' # omit patch digit
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 
+# Add Geocoding
+
+gem "geocoder"
+
 gem "devise"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -52,6 +56,8 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 gem "sassc-rails"
+
+gem "cloudinary"
 
 # Adding bootstrap gem
 gem 'bootstrap', '~> 5.0.0'
