@@ -4,6 +4,12 @@ class GearsController < ApplicationController
 
   def index
     @gears = Gear.all
+    @markers = @gears.geocoded.map do |gear|
+      {
+        lat: gear.latitude,
+        lng: gear.longitude
+      }
+    end
   end
 
   def show
