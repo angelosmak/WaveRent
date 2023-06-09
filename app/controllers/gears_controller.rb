@@ -23,6 +23,7 @@ class GearsController < ApplicationController
 
   def show
     @gear = Gear.find(params[:id])
+    @booking = Booking.new
     @marker = {
       lat: @gear.latitude,
       lng: @gear.longitude

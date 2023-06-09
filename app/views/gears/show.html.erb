@@ -1,39 +1,46 @@
-<div class="d-flex container">
-  <div class="row row-cols-2">
-    <div id="carousel<%= @gear.id %>" class=" ms-2 carousel slide col-11" data-bs-ride="carousel" style="max-width: 900px; max-height: 80%;">
-      <div class="carousel-inner card shadow">
-        <% @gear.photos.each_with_index do |photo, i| %>
-          <div class="shadow carousel-item <%= 'active' if i == 0 %>">
-            <%= image_tag photo.url, class: 'd-block w-100', alt: "Gear Photo" %>
+<div class=" container">
+  <div class="row justify-content-between">
+    <div class="col-6">
+      <div class="card my-4 mx-4 shadow " style="width: 55rem;, height: 75rem;">
+        <div id="carousel<%= @gear.id %>" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% @gear.photos.each_with_index do |photo, i| %>
+              <div class="shadow carousel-item <%= 'active' if i == 0 %>">
+                <%= image_tag photo.url, class: 'd-block w-100', alt: "Gear Photo" %>
+              </div>
+            <% end %>
           </div>
-        <% end %>
+          <a class="carousel-control-prev" href="#carousel<%= @gear.id %>" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel<%= @gear.id %>" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
       </div>
-      <a class="carousel-control-prev" href="#carousel<%= @gear.id %>" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel<%= @gear.id %>" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </a>
+    </div>
+  <div class="col-3">
+    <div class="card my-4 shadow " style=" height: 30rem;">
+      <div class="card-body justify-content-end">
+        <h5 class="card-title"><%= @gear.title %></h5>
+        <p class="card-text"><%= @gear.description %></p>
+        <hr>
+        <ul class=" list-group list-group-horizontal justify-content-end rounded">
+          <li class="list-group-item shadow-sm p-1 mb-2 me-2 ms-2 bg-body-tertiary rounded "><i class="fa-solid fa-dollar-sign"></i><%= @gear.rate_per_day %></li>
+        </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="card my-4 shadow col-3" style=" height: 30rem;">
-    <div class="card-body justify-content-end">
-      <h5 class="card-title"><%= @gear.title %></h5>
-      <p class="card-text"><%= @gear.description %></p>
-      <hr>
-      <ul class=" list-group list-group-horizontal justify-content-end rounded">
-        <li class="list-group-item shadow-sm p-1 mb-2 me-2 ms-2 bg-body-tertiary rounded "><i class="fa-solid fa-dollar-sign"></i><%= @gear.rate_per_day %></li>
-      </ul>
-      </div>
-    </div>
+  </div>
 </div>
 
 
 <div class="container relative">
   <div class="row">
-    <div class="col-8">
+    <div class="col-7">
       <div class="flat-show-card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
         <h2><%= @gear.title %></h2>
         <p><%= @gear.brand %></p>
@@ -51,17 +58,14 @@
       </div>
     </div>
     <div id="sticky" class="col-4 py-3 ">
-      <form class="card shadow-lg p-3 mb-3 bg-body-tertiary rounded" action="/book" method="POST">
-  <div class="card mb-3">
-    <label class="form-label" for="from-date">From:</label>
-    <input class="form-control" type="date" id="from-date" name="from-date" required>
-  </div>
-  <div class="card mb-3">
-    <label class="form-label" for="to-date">To:</label>
-    <input class="form-control" type="date" id="to-date" name="to-date" required>
-  </div>
-  <button class="btn btn-primary" type="submit">Book now!</button>
-</form>
+
+<div class="card p-3 rounded">
+  <%= simple_form_for [@gear, @booking] do |f| %>
+    <%= f.input :rental_start_date, as: :date, label: "From:", required: true %>
+    <%= f.input :rental_end_date, as: :date, label: "To:", required: true %>
+    <%= f.button :submit, "Rent now!", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
 
     <div class="flat-show-card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
