@@ -54,3 +54,29 @@
   text-align: center;
   font-weight: bold;
 }
+
+.h4-gear {
+  color: $med-blue;
+  // text-shadow: 8px 8px 0px rgb(210, 238, 246);
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Bowlby One SC', cursive;
+  margin-top: 80px;
+}
+
+h4 {
+  color: $med-blue;
+  // text-shadow: 8px 8px 0px #ffbc03;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Dongle', sans-serif;
+  // margin-top: 80px;
+}
+
+.map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 48px;
+}

@@ -31,18 +31,29 @@
   margin: 0;
 }
 
-.card-gear p {
+.card-title {
+  font-family: 'Bowlby One SC', cursive;
+  color: $med-blue;
+}
+
+.card-text {
   font-family: 'Dongle', sans-serif;
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  font-size: 24px;
+  color: $dark-blue;
+  line-height: 16px;
+
+}
+p {
+  color: $dark-blue;
 }
 
-
-.card-gear .card-gear-infos {
-  background-color: rgb(210, 238, 246);
+.card-textd {
+  background-color: $med-blue;
   padding: 16px;
-  margin: 16px;
+  margin-inline: -8px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
@@ -55,6 +66,15 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card {
+  border-radius: 8px;
+  border: 4px solid $dark-blue;
+}
+
+.d-block {
+  border-radius: 8px;
 }
 
 .cards {
