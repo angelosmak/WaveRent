@@ -31,15 +31,17 @@
                 <span class="visually-hidden">Next</span>
               </a>
             </div>
-            <div class="card-body">
-              <h5 class="card-title"><%= gear.title %></h5>
-              <p class="card-text"><%= gear.description %></p>
-              <hr>
-            <ul class=" list-group list-group-horizontal justify-content-end rounded">
-              <li class="list-group-item shadow-sm p-1 mb-2 me-2 ms-2 bg-body-tertiary rounded "><i class="fa-solid fa-dollar-sign"></i><%= gear.rate_per_day %></li>
-            </ul>
-              <a href="/gears/<%= gear.id %>" class="btn btn-outline-primary rounded">Rent Now</a>
-            </div>
+            <a href="/gears/<%= gear.id %>" class="card-link">
+              <div class="card-body">
+                <h5 class="card-title"><%= gear.title %></h5>
+                <p class="card-text"><%= gear.description %></p>
+                <hr>
+              <ul class=" list-group list-group-horizontal justify-content-end rounded">
+                <li class="list-group-item shadow-sm p-1 mb-2 me-2 ms-2 bg-body-tertiary rounded "><i class="fa-solid fa-dollar-sign"></i><%= gear.rate_per_day %></li>
+              </ul>
+                <a href="/gears/<%= gear.id %>" class="btn btn-outline-primary rounded">Rent Now</a>
+              </div>
+            </a>
           </div>
         </div>
       <% end %>

@@ -11,8 +11,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.gear = @gear
     @booking.user = current_user
-    @booking.save
-    redirect_to user_path(@booking.user)
+    if @booking.save
+      redirect_to user_path(@booking.user)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
