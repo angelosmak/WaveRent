@@ -1,9 +1,9 @@
-.navbar-design {
-  display: flex;
-  width: 100vw;
-  justify-content: space-between;
-  background: white;
-}
+// .navbar-design {
+//   display: flex;
+//   width: 100vw;
+//   justify-content: space-between;
+//   background: white;
+// }
 
 // h1 {
 //   font-size: 24px;
@@ -12,17 +12,89 @@
 //   padding: 0;
 // }
 
-.navbar-login {
-  // align-items: right;
-  justify-content: space-between;
-  padding: 0px 24px;
-  height: 40px;
-}
+// .navbar-login {
+//   // align-items: right;
+//   justify-content: space-between;
+//   padding: 0px 24px;
+//   height: 40px;
+// }
 
 // .navbar-lewagon .navbar-collapse {
 //   flex-grow: 0;
 // }
 
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: $body-color;
+  font-family: 'Bowlby One SC', cursive;
+  color: $body-color;
+  align-items: center;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 64px;
+}
+
+.avatar {
+  width: 64px;
+  margin-right: 32px;
+}
+
+#logo {
+  display: inline;
+}
+
+.display-3 {
+  display: inline;
+  font-size: 40px;
+  color: $med-blue;
+  text-shadow: 4px 4px 0px $yellow;
+  padding-left: 32px;
+}
+
+.navbar-nav.me-auto {
+  align-items: center;
+}
+
+.nav-link {
+  margin-inline: 16px;
+  font-size: 24px;
+  color: $dark-blue;
+  // text-shadow: 2px 2px 1.6px $yellow;
+}
+
+// .nav-link:hover {
+//   text-shadow: 2px 2px 1.6px $yellow;
+
+// }
+
+.btn.btn-primary {
+  color: $med-blue;
+  background-color: $med-blue;
+  display: flex;
+  margin-left: -8px;
+}
+
+.btn {
+  border: 0px;
+  color: $body-color;
+  background-color: $med-blue;
+}
+
+.search {
+  width: 320px;
+}
+
+.form-control {
+  background-color: $med-blue;
+  color: $med-blue;
+  border: 0px;
 }

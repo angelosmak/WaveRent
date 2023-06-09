@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Dongle:wght@300;400;700&family=Orelega+One&display=swap" rel="stylesheet">
     <link href="app/assets/stylesheets/application.scss" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
     </head>
 
   <body>
@@ -19,7 +23,6 @@
     <div class="info d-flex justify-content-end">
         <h4 ><%= current_user.email %></h4>
       </div>
-        <%= render 'shared/carousel' %>
           <% end %>
           <%= yield %>
     <%= render 'shared/footer' %>
