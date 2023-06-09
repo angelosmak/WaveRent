@@ -1,9 +1,10 @@
 <%= simple_form_for @gear do |f| %>
-  <%= f.input :brand, required: true, placeholder: "Enter item's brand"%>
-  <%= f.input :title, required: true, placeholder: "Enter item's brand"%>
-  <%= f.input :description, required: true, placeholder: "Enter item's brand"%>
-  <%= f.input :category, collection: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"]%>
+  <%= f.input :title, required: true, placeholder: "Enter item's title"%>
+  <%= f.input :description, required: true, placeholder: "Enter item's description"%>
+  <%= f.input :address, required: true, placeholder: "Where are you located?"%>
   <%= f.input :model, required: true, placeholder: "Enter item's model"  %>
+  <%= f.input :brand, required: true, placeholder: "Enter item's brand"%>
+  <%= f.input :category, collection: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"]%>
   <%= f.input :size, required: false, placeholder: "(optional) Enter item's size"  %>
   <%= f.input :rate_per_day, required: true %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>

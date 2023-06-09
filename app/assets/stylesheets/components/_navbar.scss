@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  width: 100vw;
+  background-image: url("https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80");
+  justify-content:space-evenly;
+  height: 10vh;
+  border-color: black;
+}
+
+// h1 {
+//   font-size: 24px;
+//   font-weight: 600;
+//   margin: 0;
+//   padding: 0;
+// }
+
+.navbar-login {
+  // align-items: right;
+  justify-content: space-between;
+  padding: 0px 24px;
+  height: 40px;
+}
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+

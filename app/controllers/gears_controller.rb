@@ -3,7 +3,6 @@ class GearsController < ApplicationController
   before_action :set_gear, only: [:edit, :update, :destroy]
 
   def index
-#     @pagy, @gears = pagy(Gear.all, items: 5)
     @gears = Gear.all
     @markers = @gears.geocoded.map do |gear|
         {
@@ -24,8 +23,11 @@ class GearsController < ApplicationController
 
   def show
     @gear = Gear.find(params[:id])
+    @marker = {
+      lat: @gear.latitude,
+      lng: @gear.longitude
+    }
   end
-
   def new
     @gear = Gear.new
   end

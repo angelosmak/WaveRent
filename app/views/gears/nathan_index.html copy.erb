@@ -1,38 +1,60 @@
+<<<<<<< HEAD:app/views/gears/index.html.erb
+<%= render 'shared/carousel' %>
+<div class="container">
+  <p class="display-1">Welcome to WaveRent!</p>
+  <h3 class="text-center">A place for you to hire surf gear</h3>
+  <div class="bg-logo d-flex justify-content-center">
+  <%= image_tag("logo.png", height: 400, width: 400, style: "border-radius: 50%;") %>
+=======
 
 <div class="container-index bg-colour">
   <%# <p class="display-1">Welcome to WaveRent!</p>
    <h3>A place for you to hire surf gear</h3> %>
+>>>>>>> master:app/views/gears/nathan_index.html copy.erb
 </div>
-
-<div class="container bg-colour">
-  <h4>Gear close to you</h4>
+<div class="container">
+  <h2 class="text-center my-2">Fresh boards near you 🏄‍♂️ </h2>
 </div>
-
-<div class="cards-container bg-colour">
-  <div class="cards">
-    <% @gears.each do |gear| %>
-      <div class="card-gear">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <%# <%= image_tag Faker::LoremFlickr.image%>
-          <%# <img src="<%=Faker::LoremFlickr.image%>
-        <div class="card-gear-infos">
-          <div>
-            <h2><%= link_to gear.title, gear_path(gear) %></h2>
-            <p><%= gear.description%></p>
+  <div class="container">
+    <div class="row row-cols-4">
+      <% @gears.each do |gear| %>
+        <div class="col">
+          <div class="card my-4 shadow " style="width: 18rem;, height: 20rem;">
+            <div id="carousel<%= gear.id %>" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <% gear.photos.each_with_index do |photo, i| %>
+                  <div class="shadow carousel-item <%= 'active' if i == 0 %>">
+                    <%= image_tag photo.url, class: 'd-block w-100', alt: "Gear Photo" %>
+                  </div>
+                <% end %>
+              </div>
+              <a class="carousel-control-prev" href="#carousel<%= gear.id %>" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel<%= gear.id %>" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= gear.title %></h5>
+              <p class="card-text"><%= gear.description %></p>
+              <hr>
+            <ul class=" list-group list-group-horizontal justify-content-end rounded">
+              <li class="list-group-item shadow-sm p-1 mb-2 me-2 ms-2 bg-body-tertiary rounded "><i class="fa-solid fa-dollar-sign"></i><%= gear.rate_per_day %></li>
+            </ul>
+              <a href="/gears/<%= gear.id %>" class="btn btn-outline-primary rounded">Rent Now</a>
+            </div>
           </div>
-          <h2 class="card-gear-pricing">£99.99</h2>
-          <img src="<%=Faker::Avatar.image%>" class="card-trip-user avatar-bordered" />
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
-</div>
 
 
-<% #below is the map html, @frontend: feel free to move this where fit,it is just slammed there all ugly for now %>
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+  <div style="width: 50%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @marker.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>

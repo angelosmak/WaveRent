@@ -1,38 +1,77 @@
-  <div >
-    <div class='container card display: flex; my-4 shadow p-3 mb-5 bg-body-tertiary rounded d-flex flex-column align-items-center justify-content-center mb-3'>
-      <div class= "col-md-5 display: flex">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="d-block w-100" src="<%= asset_path('1.png') %>" alt="First slide">
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="<%= asset_path('2.png') %>" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src="<%= asset_path('3.png') %>" alt="Third slide">
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+<div class="d-flex container">
+  <div class="row row-cols-2">
+    <div id="carousel<%= @gear.id %>" class=" ms-2 carousel slide col-11" data-bs-ride="carousel" style="max-width: 900px; max-height: 80%;">
+      <div class="carousel-inner card shadow">
+        <% @gear.photos.each_with_index do |photo, i| %>
+          <div class="shadow carousel-item <%= 'active' if i == 0 %>">
+            <%= image_tag photo.url, class: 'd-block w-100', alt: "Gear Photo" %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carousel<%= @gear.id %>" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel<%= @gear.id %>" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
   </div>
-      <h2><%= @gear.title %></h2>
-      <p>Brand:<%= @gear.brand %></p>
-      <p>Model:<%= @gear.model %></p>
-      <p>Size:<%= @gear.size %></p>
-      <p>Only <%= @gear.rate_per_day %> $</p>
-      <%= link_to "Book this Item", new_gear_booking_path(@gear), class: "btn btn-outline-success mb-3 shadow p-3 bg-body-tertiary rounded" %>
+  <div class="card my-4 shadow col-3" style=" height: 30rem;">
+    <div class="card-body justify-content-end">
+      <h5 class="card-title"><%= @gear.title %></h5>
+      <p class="card-text"><%= @gear.description %></p>
+      <hr>
+      <ul class=" list-group list-group-horizontal justify-content-end rounded">
+        <li class="list-group-item shadow-sm p-1 mb-2 me-2 ms-2 bg-body-tertiary rounded "><i class="fa-solid fa-dollar-sign"></i><%= @gear.rate_per_day %></li>
+      </ul>
+      </div>
+    </div>
+</div>
+
+
+<div class="container relative">
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+        <h2><%= @gear.title %></h2>
+        <p><%= @gear.brand %></p>
+      </div>
+      <div class="flat-show-card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+        <h3>A bit more about this <%= @gear.category %>...</h3>
+        <p><%= @gear.model %></p>
+
+        <div class="map">
+      <div style="width: 100%; height: 600px;"
+        data-controller="map"
+        data-map-markers-value="<%= @marker.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+              </div>
+      </div>
+    </div>
+    <div id="sticky" class="col-4 py-3 ">
+      <form class="card shadow-lg p-3 mb-3 bg-body-tertiary rounded" action="/book" method="POST">
+  <div class="card mb-3">
+    <label class="form-label" for="from-date">From:</label>
+    <input class="form-control" type="date" id="from-date" name="from-date" required>
+  </div>
+  <div class="card mb-3">
+    <label class="form-label" for="to-date">To:</label>
+    <input class="form-control" type="date" id="to-date" name="to-date" required>
+  </div>
+  <button class="btn btn-primary" type="submit">Book now!</button>
+</form>
+
+
+    <div class="flat-show-card shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+      <div class="flex">
+        <h4>Recommend to a friend!</h4>
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-square-pinterest"></i></a>
+      </div>
     </div>
     </div>
+  </div>
 </div>

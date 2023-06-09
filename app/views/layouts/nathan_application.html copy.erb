@@ -22,15 +22,18 @@
     <%= render 'shared/navbar' %>
   </div>
     <% if user_signed_in? %>
+<<<<<<< HEAD:app/views/layouts/application.html.erb
+    <div class="info d-flex justify-content-end">
+      <div class="container">
+=======
         <% if current_user.photo.present? %>
           <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill ,style: "border-radius: 50%;"%>
         <% else %>
           <%= cl_image_tag "twh96ztaabtvaahrq8t1", height: 100, width: 100, crop: :fill ,style: "border-radius: 50%;"%>
         <% end %>
+>>>>>>> master:app/views/layouts/nathan_application.html copy.erb
       </div>
-        <h4 ><%= current_user.email %></h4>
     </div>
-      <%= render 'shared/carousel' %>
     <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
