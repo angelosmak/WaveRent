@@ -144,4 +144,14 @@ h4 {
   font-family: 'Dongle', sans-serif;
   color: rgb(210, 238, 246);
   background-color: $body-color;
+  text-align: right;
+  font-size: 20px;
+}
+
+.dropdown-item.signout {
+  font-family: 'Dongle', sans-serif;
+  color: $dark-blue;
+  background-color: $body-color;
+  text-align: right;
+  font-size: 20px;
 }
