@@ -43,9 +43,27 @@
   width: 64px;
 }
 
+.container-navbar img {
+  display: flex;
+  margin-left: 70px;
+  margin-top: 3px;
+  margin-bottom: -26px;
+}
+
+.container-navbar {
+  display: flex;
+}
+
+.container-navbar h4{
+  display: flex;
+}
+
+
 .avatar {
-  width: 64px;
+  width: 48px;
   margin-right: 32px;
+  margin-left: 71px;
+  margin-top: 2px;
 }
 
 #logo {
@@ -66,26 +84,32 @@
 
 .nav-link {
   margin-inline: 16px;
+  margin-left: -120px;
   font-size: 24px;
   color: $dark-blue;
   // text-shadow: 2px 2px 1.6px $yellow;
+  text-shadow: 2px 2px 1.6px $yellow;
 }
 
-// .nav-link:hover {
-//   text-shadow: 2px 2px 1.6px $yellow;
+.nav-link:hover {
+  text-shadow: 2px 2px 1.6px $yellow;
 
-// }
+}
 
 .btn.btn-primary {
-  color: $med-blue;
-  background-color: $med-blue;
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 16px;
+  font-weight: bold;
+  color: $dark-blue;
+  background-color: $body-color;
   display: flex;
   margin-left: -8px;
 }
 
 .btn {
+  font-family: 'Dongle', sans-serif;
   border: 0px;
-  color: $body-color;
+  color: $yellow;
   background-color: $med-blue;
 }
 
@@ -94,7 +118,23 @@
 }
 
 .form-control {
-  background-color: $med-blue;
-  color: $med-blue;
+  // background-color: $med-blue;
+  // color: $med-blue;
   border: 0px;
+}
+
+h4 {
+  color: #F4F4F4;
+  text-align: center;
+  /* margin: 6px; */
+  margin-top: 1px;
+  font-family: 'Dongle', sans-serif;
+  font-size: medium;
+  margin-left: 37px;
+  margin-bottom: -6px;
+}
+
+.login {
+  margin-left: 152px;
+
 }
