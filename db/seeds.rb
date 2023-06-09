@@ -1,9 +1,9 @@
 require 'faker'
 
-puts "Cleaning database..."
-Booking.destroy_all
-Gear.destroy_all
-User.destroy_all
+# puts "Cleaning database..."
+# Booking.destroy_all
+# Gear.destroy_all
+# User.destroy_all
 
 
 
@@ -18,38 +18,99 @@ puts "Gear..."
     phone: Faker::PhoneNumber.cell_phone,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    photo: "https://picsum.photos/200/300"
   )
   user.save!
 end
 
-  5.times do
-    gear = Gear.new(
-      title: Faker::Marketing.buzzwords,
-      description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-      model: Faker::Device.model_name,
-      category: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"].sample,
-      brand: "Quicksilver",
-      user_id: User.ids.sample,
-      rate_per_day: Faker::Number.decimal,
-      address: ["Paris", "Berlin", "Greece", "Lichtenstein"].sample,
-      photos: ["https://picsum.photos/200/300", "https://picsum.photos/200/300", "https://picsum.photos/200/300" ]
-    )
-    gear.save!
-  end
+
+  gear1 = Gear.new(
+    title: Faker::Marketing.buzzwords,
+    description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+    model: Faker::Device.model_name,
+    category: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"].sample,
+    brand: "Quicksilver",
+    user_id: User.ids.sample,
+    rate_per_day: Faker::Number.decimal,
+    address: ["Corfu", "Hawaii", "Bali", "Madeira", "Cuba", "California"],
+  )
+  gear1.photos.attach(io: File.open('app/assets/images/foam1.webp'), filename: 'photo1.jpg')
+  gear1.photos.attach(io: File.open('app/assets/images/foam2.webp'), filename: 'photo1.jpg')
+  gear1.photos.attach(io: File.open('app/assets/images/foam3.webp'), filename: 'photo1.jpg')
+  gear1.save!
 
 
-# gear_images = []
-# 60.times do
-#   gear_images << Faker::LoremFlickr.image
-# end
-# gear_image = gear_images.sample
-# # 200.times do
-# #   gear = Gear.new(
-# #     model: Faker::Device.model_name,
-# #     brand: Faker::Device.manufacturer,
-# #     user_id: User.all.sample.id,
-# #     rate_per_day: Faker::Number.decimal(l_digits: 2)
-# #   )
-# #   gear.save!
-# # end
+  gear2 = Gear.new(
+    title: Faker::Marketing.buzzwords,
+    description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+    model: Faker::Device.model_name,
+    category: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"].sample,
+    brand: "Quicksilver",
+    user_id: User.ids.sample,
+    rate_per_day: Faker::Number.decimal,
+    address: Faker::Address.street_address,
+  )
+  gear2.photos.attach(io: File.open('app/assets/images/board1.webp'), filename: 'photo1.jpg')
+  gear2.photos.attach(io: File.open('app/assets/images/board2.webp'), filename: 'photo1.jpg')
+  gear2.photos.attach(io: File.open('app/assets/images/board3.webp'), filename: 'photo1.jpg')
+  gear2.save!
+
+  gear3 = Gear.new(
+    title: Faker::Marketing.buzzwords,
+    description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+    model: Faker::Device.model_name,
+    category: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"].sample,
+    brand: "Quicksilver",
+    user_id: User.ids.sample,
+    rate_per_day: Faker::Number.decimal,
+    address: Faker::Address.street_address,
+  )
+  gear3.photos.attach(io: File.open('app/assets/images/wet1.webp'), filename: 'photo1.jpg')
+  gear3.photos.attach(io: File.open('app/assets/images/wet2.webp'), filename: 'photo1.jpg')
+  gear3.photos.attach(io: File.open('app/assets/images/wet3.webp'), filename: 'photo1.jpg')
+  gear3.save!
+
+  gear4 = Gear.new(
+    title: Faker::Marketing.buzzwords,
+    description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+    model: Faker::Device.model_name,
+    category: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"].sample,
+    brand: "Quicksilver",
+    user_id: User.ids.sample,
+    rate_per_day: Faker::Number.decimal,
+    address: Faker::Address.street_address,
+  )
+  gear4.photos.attach(io: File.open('app/assets/images/foam1.webp'), filename: 'photo1.jpg')
+  gear4.photos.attach(io: File.open('app/assets/images/foam2.webp'), filename: 'photo1.jpg')
+  gear4.photos.attach(io: File.open('app/assets/images/foam3.webp'), filename: 'photo1.jpg')
+  gear4.save!
+
+
+  gear5 = Gear.new(
+    title: Faker::Marketing.buzzwords,
+    description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+    model: Faker::Device.model_name,
+    category: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"].sample,
+    brand: "Quicksilver",
+    user_id: User.ids.sample,
+    rate_per_day: Faker::Number.decimal,
+    address: Faker::Address.street_address,
+  )
+  gear5.photos.attach(io: File.open('app/assets/images/board1.webp'), filename: 'photo1.jpg')
+  gear5.photos.attach(io: File.open('app/assets/images/board2.webp'), filename: 'photo1.jpg')
+  gear5.photos.attach(io: File.open('app/assets/images/board3.webp'), filename: 'photo1.jpg')
+  gear5.save!
+
+  gear6 = Gear.new(
+    title: Faker::Marketing.buzzwords,
+    description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+    model: Faker::Device.model_name,
+    category: [ "Longboard", "Foamboard","Fish", "SUPboard", "Shortboard", "Bodyboard", "Wetsuit"].sample,
+    brand: "Quicksilver",
+    user_id: User.ids.sample,
+    rate_per_day: Faker::Number.decimal,
+    address: Faker::Address.street_address,
+  )
+  gear6.photos.attach(io: File.open('app/assets/images/wet1.webp'), filename: 'photo1.jpg')
+  gear6.photos.attach(io: File.open('app/assets/images/wet2.webp'), filename: 'photo1.jpg')
+  gear6.photos.attach(io: File.open('app/assets/images/wet3.webp'), filename: 'photo1.jpg')
+  gear6.save!
