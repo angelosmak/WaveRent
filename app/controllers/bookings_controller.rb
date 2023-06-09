@@ -4,16 +4,19 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @gear = Gear.find(params[:gear_id])
-    @gears = Gear.all
+    # @gear = Gear.find(params[:gear_id])
+    # @gears = Gear.all
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.gear = @gear
     @booking.user = current_user
-    @booking.save
-    redirect_to user_path(@booking.user)
+    if @booking.save
+      redirect_to user_path(@booking.user)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
