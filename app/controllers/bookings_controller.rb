@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @gear = Gear.find(params[:gear_id])
     @gears = Gear.all
   end
 
