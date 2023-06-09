@@ -70,10 +70,20 @@ h2 {
   margin-bottom: 32px;
 }
 
-.signuplogin-links {
+.signuplogin-signup {
+  margin-top: 32px;
   font-family: 'Dongle', sans-serif;
   font-size: 24px;
   color: $body-color;
+  text-decoration: none;
+  // text-shadow: 4px 4px 0px $dark-blue;
+
+}
+.signuplogin-forgot {
+  font-family: 'Dongle', sans-serif;
+  font-size: 24px;
+  color: $body-color;
+  text-decoration: none;
   // text-shadow: 4px 4px 0px $dark-blue;
 
 }
