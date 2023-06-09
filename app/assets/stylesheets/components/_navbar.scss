@@ -1,11 +1,9 @@
-.navbar {
-  display: flex;
-  width: 100vw;
-  background-image: url("https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80");
-  justify-content:space-evenly;
-  height: 10vh;
-  border-color: black;
-}
+// .navbar-design {
+//   display: flex;
+//   width: 100vw;
+//   justify-content: space-between;
+//   background: white;
+// }
 
 // h1 {
 //   font-size: 24px;
@@ -14,18 +12,129 @@
 //   padding: 0;
 // }
 
-.navbar-login {
-  // align-items: right;
-  justify-content: space-between;
-  padding: 0px 24px;
-  height: 40px;
-}
+// .navbar-login {
+//   // align-items: right;
+//   justify-content: space-between;
+//   padding: 0px 24px;
+//   height: 40px;
+// }
 
 // .navbar-lewagon .navbar-collapse {
 //   flex-grow: 0;
 // }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: $body-color;
+  font-family: 'Bowlby One SC', cursive;
+  color: $body-color;
+  align-items: center;
 }
 
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 64px;
+}
+
+.container-navbar img {
+  display: flex;
+  margin-left: 70px;
+  margin-top: 3px;
+  margin-bottom: -26px;
+}
+
+.container-navbar {
+  display: flex;
+}
+
+.container-navbar h4{
+  display: flex;
+}
+
+
+.avatar {
+  width: 48px;
+  margin-right: 32px;
+  margin-left: 71px;
+  margin-top: 2px;
+}
+
+#logo {
+  display: inline;
+}
+
+.display-3 {
+  display: inline;
+  font-size: 40px;
+  color: $med-blue;
+  text-shadow: 4px 4px 0px $yellow;
+  padding-left: 32px;
+}
+
+.navbar-nav.me-auto {
+  align-items: center;
+}
+
+.nav-link {
+  margin-inline: 16px;
+  margin-left: -120px;
+  font-size: 24px;
+  color: $dark-blue;
+  // text-shadow: 2px 2px 1.6px $yellow;
+  text-shadow: 2px 2px 1.6px $yellow;
+}
+
+.nav-link:hover {
+  text-shadow: 2px 2px 1.6px $yellow;
+
+}
+
+.btn.btn-primary {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 16px;
+  font-weight: bold;
+  color: $dark-blue;
+  background-color: $body-color;
+  display: flex;
+  margin-left: -8px;
+}
+
+.btn {
+  font-family: 'Dongle', sans-serif;
+  border: 0px;
+  color: $yellow;
+  background-color: $med-blue;
+}
+
+.search {
+  width: 320px;
+}
+
+.form-control {
+  // background-color: $med-blue;
+  // color: $med-blue;
+  border: 0px;
+}
+
+h4 {
+  color: #F4F4F4;
+  text-align: center;
+  /* margin: 6px; */
+  margin-top: 1px;
+  font-family: 'Dongle', sans-serif;
+  font-size: medium;
+  margin-left: 37px;
+  margin-bottom: -6px;
+}
+
+.login {
+  margin-left: 152px;
+
+}
