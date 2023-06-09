@@ -28,6 +28,7 @@ puts "Gear..."
       brand: Faker::Device.manufacturer,
       user_id: User.last.id,
       rate_per_day: Faker::Number.decimal(l_digits: 2),
+      address: ["Paris", "Berlin", "Greece", "Lichtenstein"].sample
     )
     gear.save!
   end

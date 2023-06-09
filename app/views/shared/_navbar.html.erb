@@ -1,43 +1,42 @@
 
-<nav class="card bg-white navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid mb-2 mt-2">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-lg-0">
-       <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-water me-1 text-secondary"></i>WaveRent</a>
-        </li>
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/users/<%= current_user.id %>">Dashboard</a>
-        </li>
+<nav class="navbar navbar-expand-lg shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+<a class="nav-link active" aria-current="page" href="/">
+  <%= image_tag("logo.png", height: 100, width: 100,style: "border-radius: 50%;") %>
+</a>      <div class="col-sm-8 my-3">
+        <%= form_with url: gears_path, method: :get, class: "justify-content-end px-5 d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "px-4",
+                placeholder: "Search for Gear"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
         <% end %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Surf Gear
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Boards</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Uniforms</a></li>
-          </ul>
-        </li>
-      </ul>
-        <% if current_user %>
-          <%= link_to "New Gear", new_gear_path, class:"me-5 btn btn-success" %>
-        <% end %>
-        <div class="col-sm-8 my-3">
-          <%= form_with url: gears_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query,
-                  params[:query],
-                  class: "form-control",
-                  placeholder: "Search for Gear"
-              %>
-            <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-          <% end %>
-        </div>
-        <% if current_user %>
-        <%= link_to "Sign out", destroy_user_session_path,data: {turbo_method: :delete}, class:"ms-5 btn btn-primary" %>
-        <% end %>
-      </ul>
+      </div>
     </div>
+    <% if user_signed_in? %>
+      <a class="nav-link active" aria-current="page" href="/users/<%= current_user.id %>">
+      <% if current_user.photo.present? %>
+        <div class="d-flex">
+          <div class="dropdown">
+            <span><%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill ,style: "border-radius: 50%;", class: "shadow  bg-body-tertiary me-3"%>
+            </span>
+            <div class="dropdown-content">
+              <%= link_to "Add Gear", new_gear_path, class:"text-decoration-none link-body-emphasis" %>
+              <hr>
+              <%= link_to "Sign out", destroy_user_session_path,data: {turbo_method: :delete}, class:"text-decoration-none link-body-emphasis" %>
+            </div>
+          </div>
+          </div>
+          <p class="d-flex"><%= current_user.email %></p>
+      <%else%>
+          <div class="d-flex">
+        <%= cl_image_tag "twh96ztaabtvaahrq8t1", height: 100, width: 100, crop: :fill ,style: "border-radius: 50%;", class: "shadow  bg-body-tertiary me-3"%>
+        </div>
+      <% end %>
+    <% end %>
   </div>
+</nav>

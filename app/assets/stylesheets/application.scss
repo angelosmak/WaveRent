@@ -21,14 +21,22 @@ h2 {
 
 div.relative {
   position: relative;
-  bottom: 200px;
-  left: 80px;
+  bottom: 100px;
+  left: 40px;
 }
 
-.flat-show-card{
-  background: #F8F9FA;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  border-radius: 3px;
+// .flat-show-card{
+//   background: #F8F9FA;
+//   padding: 20px;
+//   margin-bottom: 20px;
+//   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+//   border-radius: 3px;
+// }
+body {
+  background-color: #FFF8DE;
+}
+
+.bg-logo {
+  background-image: url("https://images.unsplash.com/photo-1629196914375-f7e48f477b6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=812&q=80");
+  animation: dissolve 10s infinite;
 }
