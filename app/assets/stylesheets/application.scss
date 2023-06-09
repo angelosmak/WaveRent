@@ -51,3 +51,21 @@ h2 {
   margin-top: 120px;
 
 }
+
+.form-label {
+  font-family: 'Dongle', sans-serif;
+  color: $dark-blue;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.login-btn {
+  font-family: 'Bowlby One SC', cursive;
+  padding-inline: 24px;
+  color: $med-blue;
+  background-color: $yellow;
+  box-shadow: 4px 4px 0px $dark-blue;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
