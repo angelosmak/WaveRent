@@ -16,23 +16,44 @@
     margin-bottom: 240px;
   }
 .bg-colour {
-  background-color: $blue;
+  background-color: $body-color;
 }
 
 .display-1 {
-  color: $light-gray;
+  color: $med-blue;
+  text-shadow: 8px 8px 0px $yellow;
   text-align: center;
+  font-family: 'Bowlby One SC', cursive;
+}
+.white {
+  color: rgb(210, 238, 246);
+  text-shadow: 8px 8px 0px $yellow;
+  text-align: center;
+  font-family: 'Bowlby One SC', cursive;
 }
 
-h4 {
-  color: $light-gray;
-  text-align: center;
-  margin: 36px
-}
 
 .container-index h3 {
-  color: $light-gray;
+  font-family: 'Dongle', sans-serif;
+  color: $dark-blue;
   text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+#yellow {
+  // color: $yellow;
+  text-shadow: 2px 2px 0px $yellow;
+  text-align: center;
+  font-weight: bold;
+}
+
+#blue {
+  color: rgb(210, 238, 246);
+  text-shadow: 2px 2px 0px $yellow;
+
+  text-align: center;
+  font-weight: bold;
 }
 
 #pagination {

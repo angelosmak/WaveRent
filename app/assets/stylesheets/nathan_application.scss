@@ -16,5 +16,18 @@
 @import "font awesome/scss/solid.scss";
 
 body {
-  background-color: $blue;
+  background-color: $body-color;
+}
+
+#login {
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 80px;
+  padding: 80px;
+  background-color: $med-blue;
+  box-shadow: 8px 8px 0px $yellow;
+}
+
+.login-header {
+  margin-top: 120px;
 }

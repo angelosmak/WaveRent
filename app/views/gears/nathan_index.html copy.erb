@@ -1,20 +1,12 @@
 
-<div class="container d-flex align-items-center justify-content-between">
-  <div class="row row-4 mb-3">
-    <% @gears.each do |gear| %>
-      <div class='col-3 mx-3 mb-3 card'>
-        <div class="card" style="width: 18rem;">
-        <img src="<%= asset_path('1.png') %>" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h2><%= link_to gear.model, gear_path(gear) %></h2>
-        </div>
-      </div>
-      </div>
-    <% end %>
-  </div>
-  <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
+<div class="container-index bg-colour">
+  <%# <p class="display-1">Welcome to WaveRent!</p>
+   <h3>A place for you to hire surf gear</h3> %>
 </div>
 
+<div class="container bg-colour">
+  <h4>Gear close to you</h4>
+</div>
 
 <div class="cards-container bg-colour">
   <div class="cards">
@@ -34,8 +26,13 @@
       </div>
     <% end %>
   </div>
-  <div id="pagination">
-    <%# <%= render 'shared/pagination', pagy:@pagy %>
-  </div>
   <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
+</div>
+
+
+<% #below is the map html, @frontend: feel free to move this where fit,it is just slammed there all ugly for now %>
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>

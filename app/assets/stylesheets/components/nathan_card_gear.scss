@@ -9,9 +9,9 @@
 .card-gear {
   overflow: hidden;
   min-width: 64%;
-  background: rgba(254, 254, 254, 0.8);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: $med-blue;
   border-radius: 16px;
+  border-bottom: 8px;
 }
 
 .card-gear > img {
@@ -25,12 +25,14 @@
 }
 
 .card-gear h2 {
+  font-family: 'Dongle', sans-serif;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-gear p {
+  font-family: 'Dongle', sans-serif;
   font-size: 12px;
   opacity: .7;
   margin: 0;
@@ -38,7 +40,10 @@
 
 
 .card-gear .card-gear-infos {
+  background-color: rgb(210, 238, 246);
   padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -85,7 +90,7 @@
     max-width: 1000px;
   }
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -95,7 +100,7 @@
     max-width: 1300px;
   }
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -105,6 +110,6 @@
     max-width: 1600px;
   }
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

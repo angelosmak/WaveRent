@@ -1,7 +1,7 @@
 
 <div class="container-index bg-colour">
-  <p class="display-1">Welcome to WaveRent!</p>
-   <h3>A place for you to hire surf gear</h3>
+  <p class="display-1 white">Welcome to <span class="display-1"> WaveRent!<span></p>
+   <h3>The place for <span id="yellow">you</span> to <span id="yellow">hire</span> <span id="blue">surf gear</span> <span></h3>
 </div>
 
 <div class="container bg-colour">
@@ -25,6 +25,9 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div id="pagination">
+    <%# <%= render 'shared/pagination', pagy:@pagy %>
   </div>
   <%= link_to "Create a new Gear Listing", new_gear_path, class: "btn btn-primary" %>
 </div>
