@@ -3,9 +3,14 @@ class GearsController < ApplicationController
   before_action :set_gear, only: [:edit, :update, :destroy]
 
   def index
-#     # @gears = Gear.all
 #     @pagy, @gears = pagy(Gear.all, items: 5)
-
+    @gears = Gear.all
+    @markers = @gears.geocoded.map do |gear|
+        {
+          lat: gear.latitude,
+          lng: gear.longitude
+        }
+      end
     if params[:query].present?
       sql_subquery = "title ILIKE :query OR description ILIKE :query OR brand ILIKE :query OR model ILIKE :query OR size ILIKE :query OR category ILIKE :query"
       # @pagy, @gears = pagy(Gear.where(sql_subquery, query: "%#{params[:query]}%"))
@@ -53,7 +58,7 @@ class GearsController < ApplicationController
   private
 
   def gears_params
-    params.require(:gear).permit(:model, :brand, :size, :rate_per_day )
+    params.require(:gear).permit(:model, :brand, :size, :rate_per_day, :title, :category, :description, photos:[])
   end
 
   def set_gear
