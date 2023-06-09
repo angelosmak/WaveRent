@@ -1,0 +1,57 @@
+// Import your components CSS files here.
+@import "alert";
+@import "avatar";
+@import "form_legend_clear";
+@import "navbar";
+@import "footer";
+@import "card_gear";
+// .container-fluid {
+  //   max-width: 90vw;
+  //   margin: 0px;
+  //   // padding: 0 24px;
+  // }
+
+  .container-index {
+    margin-top: 240px;
+    margin-bottom: 240px;
+  }
+.bg-colour {
+  background-color: $body-color;
+}
+
+.display-1 {
+  color: $med-blue;
+  text-shadow: 8px 8px 0px $yellow;
+  text-align: center;
+  font-family: 'Bowlby One SC', cursive;
+}
+.white {
+  color: rgb(210, 238, 246);
+  text-shadow: 8px 8px 0px $yellow;
+  text-align: center;
+  font-family: 'Bowlby One SC', cursive;
+}
+
+
+.container-index h3 {
+  font-family: 'Dongle', sans-serif;
+  color: $dark-blue;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+#yellow {
+  // color: $yellow;
+  text-shadow: 2px 2px 0px $yellow;
+  text-align: center;
+  font-weight: bold;
+}
+
+#blue {
+  color: rgb(210, 238, 246);
+  text-shadow: 2px 2px 0px $yellow;
+
+  text-align: center;
+  font-weight: bold;
+}
